@@ -3,34 +3,22 @@
 # Noesis
 
 ### Research Intelligence OS
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)]()
-
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)]()
-
-[![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)]()
-
-[![LangChain](https://img.shields.io/badge/LangChain-Latest-1C3C3C)]()
-
-[![LangGraph](https://img.shields.io/badge/LangGraph-Latest-FF6B35)]()
-
-[![arXiv](https://img.shields.io/badge/arXiv-Scholarly_Search-B31B1B)]()
-
-[![Semantic Scholar](https://img.shields.io/badge/Semantic_Scholar-Research_API-1857B6)]()
-
-[![OpenAlex](https://img.shields.io/badge/OpenAlex-Academic_Graph-00A86B)]()
-
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)]()
-
-[![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)]()
-
-[![Qdrant](https://img.shields.io/badge/Qdrant-Vector_DB-BA55D3)]()
-
-[![MinIO](https://img.shields.io/badge/MinIO-Object_Storage-C72E29)]()
-
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)]()
-
-[![License](https://img.shields.io/badge/License-MIT-yellow)]()
-
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white">
+  <img src="https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white">
+  <img src="https://img.shields.io/badge/LangChain-Latest-1C3C3C">
+  <img src="https://img.shields.io/badge/LangGraph-Latest-FF6B35">
+  <img src="https://img.shields.io/badge/arXiv-Scholarly_Search-B31B1B">
+  <img src="https://img.shields.io/badge/Semantic_Scholar-Research_API-1857B6">
+  <img src="https://img.shields.io/badge/OpenAlex-Academic_Graph-00A86B">
+  <img src="https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white">
+  <img src="https://img.shields.io/badge/Qdrant-Vector_DB-BA55D3">
+  <img src="https://img.shields.io/badge/MinIO-Object_Storage-C72E29">
+  <img src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white">
+  <img src="https://img.shields.io/badge/License-MIT-yellow">
+</p>
 **From a research question to a peer-reviewed, evidence-grounded answer — automatically.**
 
 Noesis is a multi-agent research copilot. Ask it a question and it plans the inquiry,
