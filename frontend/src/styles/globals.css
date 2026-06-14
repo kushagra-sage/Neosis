@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme tokens ──────────────────────────────────────────────────────────── */
+:root {
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-source-serif: "Source Serif 4", Georgia, serif;
+  --font-jetbrains: "JetBrains Mono", ui-monospace, monospace;
+
+  --n-paper: #faf9f5;
+  --n-surface: #ffffff;
+  --n-surface-warm: #f3f1ea;
+  --n-surface-sunken: #efece3;
+  --n-border: #e5e1d6;
+  --n-border-strong: #d5d0c2;
+  --n-ink: #1c1b17;
+  --n-ink-2: #524f46;
+  --n-muted: #8a867b;
+  --n-accent: #c2522b;
+  --n-accent-hover: #a8431f;
+  --n-accent-soft: #f7e9e2;
+  --n-sage: #5b7b62;
+  --n-sage-soft: #eaf0eb;
+  --n-amber: #a87b2f;
+  --n-amber-soft: #f6efdf;
+  --n-danger: #b3392e;
+  --n-danger-soft: #f8e8e6;
+
+  --n-shadow-card: 0 1px 2px rgba(28, 27, 23, 0.04), 0 2px 8px rgba(28, 27, 23, 0.04);
+  --n-shadow-lifted: 0 2px 4px rgba(28, 27, 23, 0.06), 0 12px 32px rgba(28, 27, 23, 0.1);
+  --n-shadow-dialog: 0 4px 12px rgba(28, 27, 23, 0.08), 0 24px 64px rgba(28, 27, 23, 0.16);
+
+  color-scheme: light;
+}
+
+.dark {
+  --n-paper: #121110;
+  --n-surface: #1a1917;
+  --n-surface-warm: #211f1c;
+  --n-surface-sunken: #0d0c0b;
+  --n-border: #2c2a26;
+  --n-border-strong: #3a3833;
+  --n-ink: #f2efe8;
+  --n-ink-2: #b8b3a7;
+  --n-muted: #8a867b;
+  --n-accent: #e0734a;
+  --n-accent-hover: #ec8157;
+  --n-accent-soft: #2a1d16;
+  --n-sage: #7fa386;
+  --n-sage-soft: #1a221b;
+  --n-amber: #cda35e;
+  --n-amber-soft: #241e12;
+  --n-danger: #d9695e;
+  --n-danger-soft: #271713;
+
+  --n-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.25);
+  --n-shadow-lifted: 0 2px 4px rgba(0, 0, 0, 0.35), 0 12px 32px rgba(0, 0, 0, 0.45);
+  --n-shadow-dialog: 0 4px 12px rgba(0, 0, 0, 0.4), 0 24px 64px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  font-feature-settings: "cv11", "ss01";
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  @apply bg-accent-soft text-accent-hover;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border-strong rounded-full;
+  border: 3px solid var(--n-paper);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--n-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Streaming caret ───────────────────────────────────────────────────────── */
+@keyframes caret-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.streaming-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  background: var(--n-accent);
+  animation: caret-pulse 1s step-end infinite;
+}
+
+/* ── Research prose ────────────────────────────────────────────────────────── */
+.prose-research {
+  @apply font-serif text-[15px] leading-[1.85] text-ink;
+}
+.prose-research h2 {
+  @apply font-sans text-sm font-semibold text-ink mt-7 mb-2 tracking-tight;
+}
+.prose-research h3 {
+  @apply font-sans text-[13px] font-semibold text-ink-2 mt-5 mb-1.5;
+}
+.prose-research strong {
+  @apply font-semibold text-ink;
+}
+.prose-research ul {
+  @apply my-3 space-y-1.5 pl-5 list-disc;
+}
+.prose-research ol {
+  @apply my-3 space-y-1.5 pl-5 list-decimal;
+}
+.prose-research code {
+  @apply font-mono text-[12.5px] bg-surface-warm border border-border rounded px-1 py-0.5;
+}
+
+/* ── Marketing helpers ─────────────────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--n-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--n-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+.text-gradient {
+  background: linear-gradient(135deg, var(--n-ink) 0%, var(--n-accent) 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
