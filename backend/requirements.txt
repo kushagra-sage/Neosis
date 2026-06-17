@@ -1,0 +1,60 @@
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi>=0.115.0,<0.116.0
+uvicorn[standard]>=0.32.0,<0.35.0
+python-multipart>=0.0.12
+websockets>=13.0
+
+# ── Config / validation ──────────────────────────────────────────────────────
+pydantic>=2.9.0,<3.0.0
+pydantic-settings>=2.6.0
+python-dotenv>=1.0.1
+
+# ── Database (async + migrations) ────────────────────────────────────────────
+sqlalchemy[asyncio]>=2.0.36,<2.1.0
+asyncpg>=0.30.0
+psycopg[binary]>=3.2.0          # sync driver for Alembic
+alembic>=1.14.0
+
+# ── Cache / broker ───────────────────────────────────────────────────────────
+redis[hiredis]>=5.2.0
+celery[redis]>=5.4.0            # workers wired in Phase 5
+
+# ── Vector store + embeddings ────────────────────────────────────────────────
+qdrant-client>=1.12.0,<2.0.0   # query_points API; .search() removed in 1.12+
+fastembed>=0.4.0               # ONNX embeddings, no torch
+rank-bm25>=0.2.2
+
+# ── LLM / agents ─────────────────────────────────────────────────────────────
+langgraph>=0.2.45
+langchain>=0.3.7
+langchain-core>=0.3.15
+langchain-groq>=0.2.1
+langchain-community>=0.3.5
+
+# ── Scholarly retrieval (Phase 2) ────────────────────────────────────────────
+httpx>=0.27.2
+arxiv>=2.1.3
+tenacity>=9.0.0
+
+# ── Auth (Phase 1) ───────────────────────────────────────────────────────────
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+email-validator>=2.2.0
+
+# ── Object store (Phase 2) ───────────────────────────────────────────────────
+minio>=7.2.10
+pypdf>=5.1.0                   # PDF text extraction (document RAG)
+python-docx>=1.1.2             # DOCX text extraction + export
+reportlab>=4.2.0               # PDF export (pure-Python, no system deps)
+
+# ── Observability ────────────────────────────────────────────────────────────
+structlog>=24.4.0
+prometheus-fastapi-instrumentator>=7.0.0
+opentelemetry-sdk>=1.28.0
+opentelemetry-instrumentation-fastapi>=0.49b0
+
+# ── Data ─────────────────────────────────────────────────────────────────────
+numpy>=1.26.0,<2.0
+pandas>=2.2.0
+python-slugify>=8.0.4

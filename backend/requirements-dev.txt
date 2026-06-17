@@ -1,0 +1,10 @@
+# Development & test dependencies (installed on top of requirements.txt).
+-r requirements.txt
+
+pytest>=8.3.0
+pytest-asyncio>=0.24.0
+httpx>=0.27.2
+aiosqlite>=0.20.0          # async SQLite for tests
+ruff>=0.7.0
+mypy>=1.13.0
+types-python-slugify
